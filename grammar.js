@@ -12,16 +12,16 @@ module.exports = grammar({
       repeat(seq($.command, ';')),
     ),
 
-    varIdentToken: $ => /[^-?!.\\;,#"\]\[)(}{><|\s\t\n\r][^;\\,#"\]\[)(}{><|\s\t\n\r]*/,
-    holeIdentToken: $ => '?',
+    _varIdentToken: $ => /[^-?!.\\;,#"\]\[)(}{><|\s\t\n\r][^;\\,#"\]\[)(}{><|\s\t\n\r]*/,
+    _holeIdentToken: $ => '?',
 
-    holeIdent: $ => $.holeIdentToken,
-    varIdent: $ => repeat1($.varIdentToken),
+    holeIdent: $ => $._holeIdentToken,
+    varIdent: $ => $._varIdentToken, // nonempty
 
     languageDecl: $ => seq('#lang', $.language, ';'),
     language: $ => 'rzk-1',
 
-    declUsedVars: $ => seq('uses', '(', $.varIdent, ')'),
+    declUsedVars: $ => seq('uses', '(', repeat1($.varIdent), ')'),
 
     command: $ => choice(
       seq('#set-option', $.string, '=', $.string),
@@ -33,34 +33,32 @@ module.exports = grammar({
       seq('#compute-whnf', $.term),
       seq('#compute-nf', $.term),
 
-      seq('#postulate', $.varIdent, optional($.declUsedVars), repeat($.param), ':', $.term),
+      seq('#postulate', $.varIdent, optional($.declUsedVars), repeat1($.param), ':', $.term),
 
-      seq('#assume', $.varIdent, ':', $.term),
+      seq('#assume', repeat1($.varIdent), ':', $.term),
       seq('#variable', $.varIdent, ':', $.term),
-      seq('#variables', $.varIdent, ':', $.term),
+      seq('#variables', repeat1($.varIdent), ':', $.term),
 
       seq('#section', optional($.varIdent)),
       seq('#end', optional($.varIdent)),
 
-      seq('#define', $.varIdent, optional($.declUsedVars), repeat($.param), ':', $.term, ':=', $.term),
-      seq('#def', $.varIdent, optional($.declUsedVars), repeat($.param), ':', $.term, ':=', $.term),
+      seq('#define', $.varIdent, optional($.declUsedVars), repeat1($.param), ':', $.term, ':=', $.term),
+      seq('#def', $.varIdent, optional($.declUsedVars), repeat1($.param), ':', $.term, ':=', $.term),
     ),
 
-    pattern: $ => repeat1(choice(
+    pattern: $ => choice( // nonempty 
       'unit',
       $.varIdent,
       seq('(', $.pattern, ',', $.pattern, ')')
-    )),
+    ),
 
-    param: $ => repeat1(choice(
+    param: $ => choice( // nonempty 
       $.pattern,
-      seq('(', repeat($.pattern), ':', $.term, optional(seq('|', $.term)), ')'),
-
-      // seq('{', $.pattern, ':', $.term, '|', $.term, '}') // DEPRECATED
-    )),
+      seq('(', repeat1($.pattern), ':', $.term, optional(seq('|', $.term)), ')'),
+    ),
 
     paramDecl: $ => choice( 
-      $.term6,
+      $._term6,
       seq('(', $.term, ':', $.term, optional(seq('|', $.term)), ')'),
 
       // DEPRECATED:
@@ -68,72 +66,64 @@ module.exports = grammar({
       // seq('{', '(', $.pattern, ':', $.term, ')', '|', $.term, '}'),
     ),
 
-    restriction: $ => choice(
-      seq($.term, "↦", $.term, 
-          repeat(seq(',', $.term, "↦", $.term))),
+    restriction: $ => choice( // nonempty; only mentioned as list
+      seq($.term, "↦", $.term,),
 
-      seq($.term, "|->", $.term, 
-          repeat(seq(',', $.term, "|->", $.term))),
+      seq($.term, "|->", $.term,),
     ),
 
-    term: $ => seq($.term1, repeat(seq(',', $.term1))),
-
-    term1: $ => choice(
-      $.term2,
-      seq($.paramDecl, "→", $.term1),
-      seq($.paramDecl, "->", $.term1),
-
-      seq("Σ", '(', $.pattern, ':', $.term, ')', ',', $.term1),
-      seq("∑", '(', $.pattern, ':', $.term, ')', ',', $.term1),
-
-      seq("Sigma", '(', $.pattern, ':', $.term, ')', ',', $.term1),
-
-      seq($.term2, '=_{', $.term, '}', $.term2),
-      seq($.term2, '=', $.term2),
-
-      seq('\\', repeat($.param), "→", $.term1),
-      seq('\\', repeat($.param), "->", $.term1),
+    term: $ => choice( // separator nonempty ","
+      $._term1,
+      seq($._term2, 'as', $._term1),
     ),
 
-    term2: $ => choice(
-      $.term3,
-      seq($.term3, "∨", $.term2),
-      seq($.term3, "\\/", $.term2),
-    ),
+    _term1: $ => prec(1, choice(
+      $._term2,
+      field('function', seq($.paramDecl, choice("→", "->"), $._term1)),
 
-    term3: $ => choice(
-      $.term4,
-      seq($.term4, "∧", $.term3),
-      seq($.term4, "/\\", $.term3),
-    ),
+      field('sigma_type', seq(choice(
+        "Σ","∑","Sigma"
+      ), '(', $.pattern, ':', $.term, ')', ',', $._term1)),
 
-    term4: $ => choice(
-      $.term5,
-      seq($.term5, "≡", $.term5),
-      seq($.term5, "===", $.term5),
-      seq($.term5, "≤", $.term5),
-      seq($.term5, "<=", $.term5)
-    ),
+      field('type_identity', seq($._term2, '=_{', $.term, '}', $._term2)),
+      field('type_identity', seq($._term2, '=', $._term2)),
 
-    term5: $ => choice(
-      $.term6,
-      seq($.term5, "×", $.term6),
-      seq($.term5, "*", $.term6),
-    ),
+      field('lambda', seq('\\', repeat1($.param), choice("→", "->"), $._term1)),
+    )),
 
-    term6: $ => choice(
-      $.term7,
-      seq($.term6, '[', repeat($.restriction), ']'),
-      seq($.term6, $.term7),
+    _term2: $ => prec(2, choice(
+      $._term3,
+      field('tope_or', seq($._term3, choice("∨", "\\/"), $._term2)),
+    )),
 
-      seq("π₁", $.term7),
-      seq("first", $.term7),
+    _term3: $ => prec(3, choice(
+      $._term4,
+      field('tope_and', seq($._term4, choice("∧", "/\\"), $._term3)),
+    )),
 
-      seq("π₂", $.term7),
-      seq("second", $.term7),
-    ),
+    _term4: $ => prec(4, choice(
+      $._term5,
+      field('tope_eq', seq($._term5, choice("≡","==="), $._term5)),
 
-    term7: $ => choice(
+      field('tope_leq', seq($._term5, choice("≤", "<="), $._term5)),
+    )),
+
+    _term5: $ => prec(5, choice(
+      $._term6,
+      field('cube_product', seq($._term5, choice("×", "*"), $._term6)),
+    )),
+
+    _term6: $ => prec(6, choice(
+      $._term7,
+      field('type_restricted', seq($._term6, '[', seq($.restriction, repeat(seq(',', $.restriction))), ']')),
+      field('application', seq($._term6, $._term7)),
+
+      field('projection_first', seq(choice("π₁", "first"), $._term7)),
+
+      field('projection_second', seq(choice("π₂", "second"), $._term7)),
+    )),
+
+    _term7: $ => prec(7, choice(
       seq('(', $.term, ')'),
       'U',
       'CUBE',
@@ -163,7 +153,7 @@ module.exports = grammar({
       // seq('<', $.paramDecl, "→", $.term, '>'),
       // seq('<', $.paramDecl, "->", $.term, '>'),
       // seq('recOR', '(', $.term, ',', $.term, ',', $.term, ',', $.term ')'),
-    ),
+    )),
 
     comment: $ => token(choice(
       seq('--', /.*/),

@@ -1,18 +1,73 @@
 [
   {
+    "type": "command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "declUsedVars",
+          "named": true
+        },
+        {
+          "type": "param",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "term",
+          "named": true
+        },
+        {
+          "type": "varIdent",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "declUsedVars",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "varIdent",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "grammar",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "command",
+          "named": true
+        },
         {
           "type": "languageDecl",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "holeIdent",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "languageDecl",
@@ -30,7 +85,3226 @@
     }
   },
   {
+    "type": "param",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "pattern",
+          "named": true
+        },
+        {
+          "type": "term",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "paramDecl",
+    "named": true,
+    "fields": {
+      "application": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "second",
+            "named": false
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "π₁",
+            "named": false
+          },
+          {
+            "type": "π₂",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      },
+      "projection_first": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "π₁",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      },
+      "projection_second": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "second",
+            "named": false
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "π₂",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      },
+      "type_restricted": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "second",
+            "named": false
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "π₁",
+            "named": false
+          },
+          {
+            "type": "π₂",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "holeIdent",
+          "named": true
+        },
+        {
+          "type": "restriction",
+          "named": true
+        },
+        {
+          "type": "term",
+          "named": true
+        },
+        {
+          "type": "varIdent",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "pattern",
+          "named": true
+        },
+        {
+          "type": "varIdent",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "restriction",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "term",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "term",
+    "named": true,
+    "fields": {
+      "application": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "second",
+            "named": false
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "π₁",
+            "named": false
+          },
+          {
+            "type": "π₂",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      },
+      "cube_product": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "second",
+            "named": false
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "×",
+            "named": false
+          },
+          {
+            "type": "π₁",
+            "named": false
+          },
+          {
+            "type": "π₂",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      },
+      "function": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "->",
+            "named": false
+          },
+          {
+            "type": "/\\",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": "===",
+            "named": false
+          },
+          {
+            "type": "=_{",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "Sigma",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "\\",
+            "named": false
+          },
+          {
+            "type": "\\/",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "param",
+            "named": true
+          },
+          {
+            "type": "paramDecl",
+            "named": true
+          },
+          {
+            "type": "pattern",
+            "named": true
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "second",
+            "named": false
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "×",
+            "named": false
+          },
+          {
+            "type": "Σ",
+            "named": false
+          },
+          {
+            "type": "π₁",
+            "named": false
+          },
+          {
+            "type": "π₂",
+            "named": false
+          },
+          {
+            "type": "→",
+            "named": false
+          },
+          {
+            "type": "∑",
+            "named": false
+          },
+          {
+            "type": "∧",
+            "named": false
+          },
+          {
+            "type": "∨",
+            "named": false
+          },
+          {
+            "type": "≡",
+            "named": false
+          },
+          {
+            "type": "≤",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      },
+      "lambda": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "->",
+            "named": false
+          },
+          {
+            "type": "/\\",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": "===",
+            "named": false
+          },
+          {
+            "type": "=_{",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "Sigma",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "\\",
+            "named": false
+          },
+          {
+            "type": "\\/",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "param",
+            "named": true
+          },
+          {
+            "type": "paramDecl",
+            "named": true
+          },
+          {
+            "type": "pattern",
+            "named": true
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "second",
+            "named": false
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "×",
+            "named": false
+          },
+          {
+            "type": "Σ",
+            "named": false
+          },
+          {
+            "type": "π₁",
+            "named": false
+          },
+          {
+            "type": "π₂",
+            "named": false
+          },
+          {
+            "type": "→",
+            "named": false
+          },
+          {
+            "type": "∑",
+            "named": false
+          },
+          {
+            "type": "∧",
+            "named": false
+          },
+          {
+            "type": "∨",
+            "named": false
+          },
+          {
+            "type": "≡",
+            "named": false
+          },
+          {
+            "type": "≤",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      },
+      "projection_first": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "π₁",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      },
+      "projection_second": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "second",
+            "named": false
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "π₂",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      },
+      "sigma_type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "->",
+            "named": false
+          },
+          {
+            "type": "/\\",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": "===",
+            "named": false
+          },
+          {
+            "type": "=_{",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "Sigma",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "\\",
+            "named": false
+          },
+          {
+            "type": "\\/",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "param",
+            "named": true
+          },
+          {
+            "type": "paramDecl",
+            "named": true
+          },
+          {
+            "type": "pattern",
+            "named": true
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "second",
+            "named": false
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "×",
+            "named": false
+          },
+          {
+            "type": "Σ",
+            "named": false
+          },
+          {
+            "type": "π₁",
+            "named": false
+          },
+          {
+            "type": "π₂",
+            "named": false
+          },
+          {
+            "type": "→",
+            "named": false
+          },
+          {
+            "type": "∑",
+            "named": false
+          },
+          {
+            "type": "∧",
+            "named": false
+          },
+          {
+            "type": "∨",
+            "named": false
+          },
+          {
+            "type": "≡",
+            "named": false
+          },
+          {
+            "type": "≤",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      },
+      "tope_and": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "/\\",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "===",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "second",
+            "named": false
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "×",
+            "named": false
+          },
+          {
+            "type": "π₁",
+            "named": false
+          },
+          {
+            "type": "π₂",
+            "named": false
+          },
+          {
+            "type": "∧",
+            "named": false
+          },
+          {
+            "type": "≡",
+            "named": false
+          },
+          {
+            "type": "≤",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      },
+      "tope_eq": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "===",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "second",
+            "named": false
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "×",
+            "named": false
+          },
+          {
+            "type": "π₁",
+            "named": false
+          },
+          {
+            "type": "π₂",
+            "named": false
+          },
+          {
+            "type": "≡",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      },
+      "tope_leq": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "second",
+            "named": false
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "×",
+            "named": false
+          },
+          {
+            "type": "π₁",
+            "named": false
+          },
+          {
+            "type": "π₂",
+            "named": false
+          },
+          {
+            "type": "≤",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      },
+      "tope_or": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "/\\",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "===",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "\\/",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "second",
+            "named": false
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "×",
+            "named": false
+          },
+          {
+            "type": "π₁",
+            "named": false
+          },
+          {
+            "type": "π₂",
+            "named": false
+          },
+          {
+            "type": "∧",
+            "named": false
+          },
+          {
+            "type": "∨",
+            "named": false
+          },
+          {
+            "type": "≡",
+            "named": false
+          },
+          {
+            "type": "≤",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      },
+      "type_identity": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "/\\",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": "===",
+            "named": false
+          },
+          {
+            "type": "=_{",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "\\/",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "second",
+            "named": false
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "×",
+            "named": false
+          },
+          {
+            "type": "π₁",
+            "named": false
+          },
+          {
+            "type": "π₂",
+            "named": false
+          },
+          {
+            "type": "∧",
+            "named": false
+          },
+          {
+            "type": "∨",
+            "named": false
+          },
+          {
+            "type": "≡",
+            "named": false
+          },
+          {
+            "type": "≤",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      },
+      "type_restricted": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "*_1",
+            "named": false
+          },
+          {
+            "type": "*₁",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "0_2",
+            "named": false
+          },
+          {
+            "type": "0₂",
+            "named": false
+          },
+          {
+            "type": "1",
+            "named": false
+          },
+          {
+            "type": "1_2",
+            "named": false
+          },
+          {
+            "type": "1₂",
+            "named": false
+          },
+          {
+            "type": "2",
+            "named": false
+          },
+          {
+            "type": ":",
+            "named": false
+          },
+          {
+            "type": "BOT",
+            "named": false
+          },
+          {
+            "type": "CUBE",
+            "named": false
+          },
+          {
+            "type": "TOP",
+            "named": false
+          },
+          {
+            "type": "TOPE",
+            "named": false
+          },
+          {
+            "type": "U",
+            "named": false
+          },
+          {
+            "type": "Unit",
+            "named": false
+          },
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          },
+          {
+            "type": "holeIdent",
+            "named": true
+          },
+          {
+            "type": "idJ",
+            "named": false
+          },
+          {
+            "type": "recBOT",
+            "named": false
+          },
+          {
+            "type": "recOR",
+            "named": false
+          },
+          {
+            "type": "refl",
+            "named": false
+          },
+          {
+            "type": "refl_{",
+            "named": false
+          },
+          {
+            "type": "restriction",
+            "named": true
+          },
+          {
+            "type": "second",
+            "named": false
+          },
+          {
+            "type": "term",
+            "named": true
+          },
+          {
+            "type": "unit",
+            "named": false
+          },
+          {
+            "type": "varIdent",
+            "named": true
+          },
+          {
+            "type": "}",
+            "named": false
+          },
+          {
+            "type": "π₁",
+            "named": false
+          },
+          {
+            "type": "π₂",
+            "named": false
+          },
+          {
+            "type": "⊤",
+            "named": false
+          },
+          {
+            "type": "⊥",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "holeIdent",
+          "named": true
+        },
+        {
+          "type": "restriction",
+          "named": true
+        },
+        {
+          "type": "term",
+          "named": true
+        },
+        {
+          "type": "varIdent",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "varIdent",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "#assume",
+    "named": false
+  },
+  {
+    "type": "#check",
+    "named": false
+  },
+  {
+    "type": "#compute",
+    "named": false
+  },
+  {
+    "type": "#compute-nf",
+    "named": false
+  },
+  {
+    "type": "#compute-whnf",
+    "named": false
+  },
+  {
+    "type": "#def",
+    "named": false
+  },
+  {
+    "type": "#define",
+    "named": false
+  },
+  {
+    "type": "#end",
+    "named": false
+  },
+  {
     "type": "#lang",
+    "named": false
+  },
+  {
+    "type": "#postulate",
+    "named": false
+  },
+  {
+    "type": "#section",
+    "named": false
+  },
+  {
+    "type": "#set-option",
+    "named": false
+  },
+  {
+    "type": "#unset-option",
+    "named": false
+  },
+  {
+    "type": "#variable",
+    "named": false
+  },
+  {
+    "type": "#variables",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "*_1",
+    "named": false
+  },
+  {
+    "type": "*₁",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "->",
+    "named": false
+  },
+  {
+    "type": "/\\",
+    "named": false
+  },
+  {
+    "type": "0_2",
+    "named": false
+  },
+  {
+    "type": "0₂",
+    "named": false
+  },
+  {
+    "type": "1",
+    "named": false
+  },
+  {
+    "type": "1_2",
+    "named": false
+  },
+  {
+    "type": "1₂",
+    "named": false
+  },
+  {
+    "type": "2",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": ":=",
     "named": false
   },
   {
@@ -38,15 +3312,179 @@
     "named": false
   },
   {
-    "type": "holeIdentToken",
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "===",
+    "named": false
+  },
+  {
+    "type": "=_{",
+    "named": false
+  },
+  {
+    "type": "BOT",
+    "named": false
+  },
+  {
+    "type": "CUBE",
+    "named": false
+  },
+  {
+    "type": "Sigma",
+    "named": false
+  },
+  {
+    "type": "TOP",
+    "named": false
+  },
+  {
+    "type": "TOPE",
+    "named": false
+  },
+  {
+    "type": "U",
+    "named": false
+  },
+  {
+    "type": "Unit",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "\\",
+    "named": false
+  },
+  {
+    "type": "\\/",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "as",
+    "named": false
+  },
+  {
+    "type": "comment",
     "named": true
+  },
+  {
+    "type": "escape_sequence",
+    "named": true
+  },
+  {
+    "type": "first",
+    "named": false
+  },
+  {
+    "type": "idJ",
+    "named": false
   },
   {
     "type": "language",
     "named": true
   },
   {
-    "type": "varIdentToken",
-    "named": true
+    "type": "recBOT",
+    "named": false
+  },
+  {
+    "type": "recOR",
+    "named": false
+  },
+  {
+    "type": "refl",
+    "named": false
+  },
+  {
+    "type": "refl_{",
+    "named": false
+  },
+  {
+    "type": "second",
+    "named": false
+  },
+  {
+    "type": "unit",
+    "named": false
+  },
+  {
+    "type": "uses",
+    "named": false
+  },
+  {
+    "type": "|",
+    "named": false
+  },
+  {
+    "type": "|->",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  },
+  {
+    "type": "×",
+    "named": false
+  },
+  {
+    "type": "Σ",
+    "named": false
+  },
+  {
+    "type": "π₁",
+    "named": false
+  },
+  {
+    "type": "π₂",
+    "named": false
+  },
+  {
+    "type": "→",
+    "named": false
+  },
+  {
+    "type": "↦",
+    "named": false
+  },
+  {
+    "type": "∑",
+    "named": false
+  },
+  {
+    "type": "∧",
+    "named": false
+  },
+  {
+    "type": "∨",
+    "named": false
+  },
+  {
+    "type": "≡",
+    "named": false
+  },
+  {
+    "type": "≤",
+    "named": false
+  },
+  {
+    "type": "⊤",
+    "named": false
+  },
+  {
+    "type": "⊥",
+    "named": false
   }
 ]
